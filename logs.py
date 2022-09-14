@@ -21,3 +21,4 @@ if (x <= -10) or (x > 7):
     print("Invalid input. x must be larger than -10 and less than or equal to 7.")
 else:
     print("g(" + str(x) + ") = " + str(g(x)))
+
