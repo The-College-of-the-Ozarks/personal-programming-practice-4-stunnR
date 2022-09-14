@@ -18,10 +18,26 @@ def mph_to_fts(mph):
     return mph*5280/3600
 
 mph = input("Input speed in mph: ")
-mph = float(mph)
 
-print("Speed in kph is", mph_to_kph(mph))
+# ensures user enters numeric value
+try:
+    mph = float(mph)
+except:
+    print("Invalid input. Only numeric input is accepted.")
+    exit()
 
-print("Speed in m/s is", mph_to_ms(mph))
+# prints menu of function choices
+print("1: Convert to kph")
+print("2: Convert to m/s")
+print("3: Convert to ft/s")
+choice = input("Please enter the number of the function you would like to use: ")
 
-print("Speed in ft/s is", mph_to_fts(mph))
+# outputs appropriate converted value, or exits if invalid input was given
+if choice == '1':
+    print("Speed in kph is", mph_to_kph(mph))
+elif choice == '2':
+    print("Speed in m/s is", mph_to_ms(mph))
+elif choice == '3':
+    print("Speed in ft/s is", mph_to_fts(mph))
+else:
+    print("Input given was not a menu choice.")
